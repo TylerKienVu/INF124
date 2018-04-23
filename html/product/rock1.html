@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta author="Tyler Vu">
+		<title>INF 124</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+	  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<script src="../../js/scripts.js"></script>	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="../../css/animate.css">    
+		<link rel="stylesheet" href="../../css/hover.css">    	
+	    <link rel="stylesheet" href="../../css/styles.css">
+	</head>
+	<body>
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="../index.html">Rock Stop</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+  			</button>
+  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="../index.html">Home</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="../product.html">Product<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../team.html">Team</a>
+					</li>
+  				</ul>
+  			</div>
+		</nav>
+		<div class="product-detail-container">
+			<img class="product-detail-image" src="../../content/product/rock1.jpg">
+			<ul class="product-description">
+				<li><strong>Rock Number: </strong>1</li>
+				<li><strong>Color: </strong>Purple</li>
+				<li><strong>Quantity Per Order: </strong>1</li>
+				<li><strong>Price Per Order: </strong>$5.99</li>				
+				<li><strong>Description: </strong>A chunk of purple amethyst that will brighten your day and make your life better in every way. Truly a magical stone.</li>
+			</ul>
+		</div>
+		<form action="MAILTO:tylerkienvu@gmail.com" id="purchase-form" >
+		  <h5>Order Details</h5>
+		  <div class="form-row">
+		    <div class="form-group col-md-3">
+		      <label for="inputItem">Item Number</label>
+		      <input type="text" class="form-control" id="inputItem" placeholder="Rock Number">
+		    </div>	
+		    <div class="form-group col-md-3">
+		      <label for="inputNumberOfOrders">Number of Orders</label>
+		      <input type="text" class="form-control" id="inputNumberOfOrders">
+		    </div>			    	  	
+		  </div>		  
+		  <div class="form-row">
+		    <div class="form-group col-md-3">
+		      <label for="inputFirstName">First Name</label>
+		      <input type="text" class="form-control" id="inputFirstName" placeholder="Tyler">
+		    </div>	
+		    <div class="form-group col-md-3">
+		      <label for="inputLastName">Last Name</label>
+		      <input type="text" class="form-control" id="inputLastName" placeholder="Vu">
+		    </div>			    	  	
+		    <div class="form-group col-md-6">
+		      <label for="inputEmail4">Email</label>
+		      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputAddress">Shipping Address</label>
+		    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+		  </div>
+		  <div class="form-group">
+		    <label for="inputAddress2">Shipping Address 2</label>
+		    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+		  </div>
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="inputCity">City</label>
+		      <input type="text" class="form-control" id="inputCity">
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="inputState">State</label>
+		      <select id="inputState" class="form-control">
+		        <option selected>Choose...</option>
+		        <option>California</option>
+		      </select>
+		    </div>
+		    <div class="form-group col-md-2">
+		      <label for="inputZip">Zip</label>
+		      <input type="text" class="form-control" id="inputZip">
+		    </div>
+		  </div>
+		  <h5>Payment Method</h5>
+		  <div class="form-row">
+		    <div class="form-group col-md-4">
+		      <label for="inputCardName">Name on Card</label>
+		      <input type="text" class="form-control" id="inputCardName" placeholder="Tyler Vu">
+		    </div>		    	  	
+		    <div class="form-group col-md-6">
+		      <label for="inputCardNumber">Card Number</label>
+		      <input type="text" class="form-control" id="inputCardNumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+		    </div>
+		    <div class="form-group col-md-1">
+		      <label for="inputExpiration">Expiration Date</label>
+		      <input type="text" class="form-control" id="inputExpiration" placeholder="XX/XX">
+		    </div>		
+		    <div class="form-group col-md-1">
+		      <label for="inputCSC">CSC</label>
+		      <input type="text" class="form-control" id="inputCSC" placeholder="XXX">
+		    </div>		        
+		  </div>	
+		  <div class="form-group">
+		    <label for="inputBillingAddress">Billing Address</label>
+		    <input type="text" class="form-control" id="inputBillingAddress" placeholder="1234 Main St">
+		  </div>
+		  <div class="form-group">
+		    <label for="inputBillingAddress2">Billing Address 2</label>
+		    <input type="text" class="form-control" id="inputBillingAddress2" placeholder="Apartment, studio, or floor">
+		  </div>
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="inputBillingCity">City</label>
+		      <input type="text" class="form-control" id="inputBillingCity">
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="inputBillingState">State</label>
+		      <select id="inputBillingState" class="form-control">
+		        <option selected>Choose...</option>
+		        <option>California</option>
+		      </select>
+		    </div>
+		    <div class="form-group col-md-2">
+		      <label for="inputBillingZip">Zip</label>
+		      <input type="text" class="form-control" id="inputBillingZip">
+		    </div>
+		  </div>		  	  	  
+		  <button type="submit" class="btn btn-primary">Place Order</button>
+		</form>		
+	</body>
+</html>
