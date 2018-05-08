@@ -71,9 +71,17 @@ else {
 	$order_id = $conn->insert_id;
 }
 
+//grab rock price
+$rock_price_query = "SELECT price_per_order from Rocks where rock_id = ".$_POST['rockNum'];
+$query_result = mysqli_query($conn,$rock_price_query);
+$row = mysqli_fetch_assoc($query_result);
+
+$rock_price = $row['price_per_order'];
+
 echo "<h2>Order Summary</h2><br>";
 echo "Rock number purchased: ".$_POST['rockNum']."<br>";
 echo "Number of orders: ".$_POST['quantity']."<br>";
+echo "Order total: $".($rock_price * $_POST['quantity'])."<br>";
 echo "Order #: ".$order_id."<br>";
 echo "Shipping address: ".$_POST['shipAddress']." ".$_POST['shipAddress2'].", ".$_POST['city']." ".$_POST['state']." ".$_POST['zip'];
 echo "<br><br>";

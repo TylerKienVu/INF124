@@ -27,5 +27,6 @@ $row = mysqli_fetch_assoc($query_result);
 
 echo $row['price_per_order'];
 
+mysqli_close($conn);
 
 ?>

@@ -67,7 +67,7 @@ error_reporting(E_ALL);
 			$rockRow = mysqli_fetch_array($query);
 			// echo $rockRow['rock_id'];
 
-			echo "<img class=\"product-detail-image\" src=\"../../content/product/rock".$rock_id.".jpg\">";
+			echo "<img class=\"product-detail-image\" src=\"../content/product/rock".$rock_id.".jpg\">";
 			echo "<ul class=\"product-description\">";
 				echo "<li><strong>Rock Number: </strong>".$rock_id."</li>";
 				echo "<li><strong>Color: </strong>".$rockRow['color']."</li>";
