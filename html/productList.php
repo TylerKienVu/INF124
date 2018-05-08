@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -28,21 +33,77 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../index.html">Home</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="productList.php">Product</a>
-					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="team.html">Team<span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="productList.php">Product<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="team.html">Team</a>
 					</li>
   				</ul>
   			</div>
 		</nav>
-		<div id="team-landing-image" class="parallax">
+		<div id="product-landing-image" class="parallax">
+			<div id="product-landing-content-container" class="landing-content-container">
+			</div>
 		</div>
-		<div id="team-divider-one" class="parallax-divider">
-			<h3 class="divider-text">We are an agile team of rock enthusiasts who love the earth. We want to spread that love to the rest of the world, starting with you.</h3>
-		</div>
-		<div id="team-image-one" class="parallax">
-		</div>		
+		<table id="product-table" class="table">
+			<thead>
+			    <tr>
+		    		<th scope="col">#</th>
+			    	<th scope="col">Image</th>
+			    	<th scope="col">Color</th>
+			    	<th scope="col">Quantity</th>
+					<th scope="col">Price</th>			    	
+			    </tr>
+		  	</thead>
+		  	<tbody>
+
+				<?php
+
+				$servername = "matt-smith-v4.ics.uci.edu";
+				$username = "inf124db061";
+				$password = "TMcVwhIMAmW^";
+
+				//create connection
+				$conn = mysqli_connect($servername, $username, $password);
+				mysqli_select_db($conn,"inf124db061");
+
+				if (!$conn) {
+					die("Connection failed: " . mysqli_connect_error());
+				}
+
+				$rocks = "SELECT * FROM Rocks";
+				$query = mysqli_query($conn, $rocks);
+				if (!$query) {
+    				printf("Error: %s\n", mysqli_error($conn));
+    				exit();
+				}
+				
+				while ($row = mysqli_fetch_array($query)) {
+					echo "<tr>";
+					//rock number
+					echo "<th scope=\"row\">".($row['rock_id'])."</th>";
+
+					// //image
+					echo "<td><a href=\"../html/rockDetails.php?rockNum=".($row['rock_id'])."\">";
+					echo "<img class=\"product-image hvr-grow\" src=\"../content/product/rock".($row['rock_id']).".jpg\"></a></td>";
+
+					//color;
+					echo "<td>".($row['color'])."</td>";
+
+					//quanity per order
+					echo "<td>".($row['quantity_per_order'])."</td>";
+
+					// //price per order
+					echo "<td>$".($row['price_per_order'])."</td>";
+
+					echo "</tr>";
+				}
+
+				mysqli_close($conn);
+
+				?>   			    			    			    			    			    	
+		  </tbody>
+		</table>		
 	</body>
 </html>
